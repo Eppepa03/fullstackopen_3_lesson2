@@ -64,8 +64,8 @@ app.put("/api/notes/:id", (request, response, next) => {
     const { content, important } = request.body
 
     const note = {
-        content: body.content,
-        important: body.important,
+        content: content,
+        important: important,
     }
 
     Note.findByIdAndUpdate(
@@ -102,5 +102,5 @@ app.use(errorHandler)
 const PORT = process.env.PORT
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
-})
-
+    }
+)
